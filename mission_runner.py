@@ -3,6 +3,9 @@
 높이 센서를 활용한 복합 미션을 실행
 """
 
+from typing import Optional
+from djitellopy import Tello
+
 from sequences.drone_sequences import Mission
 from connection_manager import auto_reconnect_drone
 from sequences.combined_sequences import PrecisionLanding

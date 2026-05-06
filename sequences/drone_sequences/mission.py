@@ -39,7 +39,10 @@ class Mission(BaseSequence):
         
         # 1. 이륙 → 현재 고도에서 50cm 더 상승 (총 1.5m 목표)
         self.add_action(Takeoff())
-        self.add_action(MoveToHeight(target_height=50, from_current=True)) 
+        self.add_action(MoveToHeight(target_height=50, from_current=True))
+        self.add_action(MoveToHeight(target_height=40, from_current=True))
+
+        self.add_action(MoveToHeight(target_height=50, from_current=True))
         
         # 2. 0.5m 전진
         self.add_action(MoveForward(distance=50))
@@ -48,6 +51,14 @@ class Mission(BaseSequence):
         self.add_action(MoveForward(distance=50))
         
         # 4. 0.5m 전진
+        self.add_action(MoveForward(distance=30))
+
+        # 5. 50cm 하강 (1.5m → 1m)
+        self.add_action(MoveToHeight(target_height=-50, from_current=True))  
+        
+        # 6. 0.5m 전진
+        self.add_action(MoveForward(distance=50))
+
         self.add_action(MoveForward(distance=50))
         
         # 5. 50cm 하강 (1.5m → 1m)
@@ -63,6 +74,16 @@ class Mission(BaseSequence):
         self.add_action(MoveForward(distance=50))
         
         # 9. 50cm 상승 (1m → 1.5m)
+        self.add_action(MoveToHeight(target_height=50, from_current=True))
+
+        # 10. 1.5m 전진
+        self.add_action(MoveForward(distance=50))
+        
+        # 11. 0.4m 전진
+        self.add_action(MoveForward(distance=40))
+        
+        # 12. 50cm 하강 (1.5m → 1.0m)
+        self.add_action(Land())
         self.add_action(MoveToHeight(target_height=50, from_current=True))  
         
         # 10. 0.5m 전진
