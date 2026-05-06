@@ -17,6 +17,9 @@ RED_COLOR = {
         'lower_range2': np.array([170, 50, 50]),    # H: 170, S: 50, V: 50
         'upper_range2': np.array([180, 255, 255])   # H: 180, S: 255, V: 255
     },
+
+
+    
     # 시각화 설정
     'display_name': 'Red',
     'bgr_color': (0, 0, 255),  # 빨간색
